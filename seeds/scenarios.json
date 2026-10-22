@@ -1,0 +1,69 @@
+{
+  "replay_event_ids": ["uat_replayed_event_event"],
+  "orders": [
+    {"order_id": "uat_failed_then_success_order", "created_at": "2026-01-01T00:00:00+00:00", "order_amount_paise": 100000, "currency": "INR"},
+    {"order_id": "uat_late_pending_order", "created_at": "2026-01-01T00:00:00+00:00", "order_amount_paise": 100000, "currency": "INR"},
+    {"order_id": "uat_replayed_event_order", "created_at": "2026-01-01T00:00:00+00:00", "order_amount_paise": 100000, "currency": "INR"},
+    {"order_id": "uat_double_success_order", "created_at": "2026-01-01T00:00:00+00:00", "order_amount_paise": 100000, "currency": "INR"},
+    {"order_id": "uat_partial_refunds_order", "created_at": "2026-01-01T00:00:00+00:00", "order_amount_paise": 100000, "currency": "INR"},
+    {"order_id": "uat_fee_tax_net_order", "created_at": "2026-01-01T00:00:00+00:00", "order_amount_paise": 100000, "currency": "INR"},
+    {"order_id": "uat_not_yet_due_order", "created_at": "2026-01-01T00:00:00+00:00", "order_amount_paise": 100000, "currency": "INR"},
+    {"order_id": "uat_overdue_missing_order", "created_at": "2026-01-01T00:00:00+00:00", "order_amount_paise": 100000, "currency": "INR"},
+    {"order_id": "uat_partial_settlement_order", "created_at": "2026-01-01T00:00:00+00:00", "order_amount_paise": 100000, "currency": "INR"},
+    {"order_id": "uat_refund_over_capture_order", "created_at": "2026-01-01T00:00:00+00:00", "order_amount_paise": 100000, "currency": "INR"}
+  ],
+  "attempts": [
+    {"attempt_id": "uat_failed_then_success_attempt_fail", "order_id": "uat_failed_then_success_order", "method": "upi", "amount_paise": 100000, "status": "failed", "created_at": "2026-01-01T00:00:00+00:00", "status_updated_at": "2026-01-01T00:05:00+00:00"},
+    {"attempt_id": "uat_failed_then_success_attempt_ok", "order_id": "uat_failed_then_success_order", "method": "upi", "amount_paise": 100000, "status": "success", "created_at": "2026-01-01T01:00:00+00:00", "status_updated_at": "2026-01-01T01:02:00+00:00"},
+    {"attempt_id": "uat_late_pending_attempt", "order_id": "uat_late_pending_order", "method": "upi", "amount_paise": 100000, "status": "success", "created_at": "2026-01-01T00:00:00+00:00", "status_updated_at": "2026-01-03T00:00:00+00:00"},
+    {"attempt_id": "uat_replayed_event_attempt", "order_id": "uat_replayed_event_order", "method": "upi", "amount_paise": 100000, "status": "success", "created_at": "2026-01-01T00:00:00+00:00", "status_updated_at": "2026-01-01T00:00:00+00:00"},
+    {"attempt_id": "uat_double_success_attempt_a", "order_id": "uat_double_success_order", "method": "card", "amount_paise": 100000, "status": "success", "created_at": "2026-01-02T00:00:00+00:00", "status_updated_at": "2026-01-02T00:01:00+00:00"},
+    {"attempt_id": "uat_double_success_attempt_b", "order_id": "uat_double_success_order", "method": "card", "amount_paise": 100000, "status": "success", "created_at": "2026-01-02T00:10:00+00:00", "status_updated_at": "2026-01-02T00:11:00+00:00"},
+    {"attempt_id": "uat_partial_refunds_attempt", "order_id": "uat_partial_refunds_order", "method": "upi", "amount_paise": 100000, "status": "success", "created_at": "2026-01-03T00:00:00+00:00", "status_updated_at": "2026-01-03T00:00:00+00:00"},
+    {"attempt_id": "uat_fee_tax_net_attempt", "order_id": "uat_fee_tax_net_order", "method": "netbanking", "amount_paise": 100000, "status": "success", "created_at": "2026-01-04T00:00:00+00:00", "status_updated_at": "2026-01-04T00:00:00+00:00"},
+    {"attempt_id": "uat_not_yet_due_attempt", "order_id": "uat_not_yet_due_order", "method": "upi", "amount_paise": 100000, "status": "success", "created_at": "2026-01-01T02:00:00+00:00", "status_updated_at": "2026-01-01T02:00:00+00:00"},
+    {"attempt_id": "uat_overdue_missing_attempt", "order_id": "uat_overdue_missing_order", "method": "upi", "amount_paise": 100000, "status": "success", "created_at": "2026-01-01T03:00:00+00:00", "status_updated_at": "2026-01-01T03:00:00+00:00"},
+    {"attempt_id": "uat_partial_settlement_attempt", "order_id": "uat_partial_settlement_order", "method": "card", "amount_paise": 100000, "status": "success", "created_at": "2026-01-04T00:00:00+00:00", "status_updated_at": "2026-01-04T00:00:00+00:00"},
+    {"attempt_id": "uat_refund_over_capture_attempt", "order_id": "uat_refund_over_capture_order", "method": "upi", "amount_paise": 100000, "status": "success", "created_at": "2026-01-03T00:00:00+00:00", "status_updated_at": "2026-01-03T00:00:00+00:00"}
+  ],
+  "events": [
+    {"event_id": "uat_failed_then_success_event_fail", "attempt_id": "uat_failed_then_success_attempt_fail", "status": "failed", "occurred_at": "2026-01-01T00:05:00+00:00", "received_at": "2026-01-01T00:05:00+00:00"},
+    {"event_id": "uat_failed_then_success_event_ok", "attempt_id": "uat_failed_then_success_attempt_ok", "status": "success", "occurred_at": "2026-01-01T01:02:00+00:00", "received_at": "2026-01-01T01:02:00+00:00"},
+    {"event_id": "uat_late_pending_event_pending", "attempt_id": "uat_late_pending_attempt", "status": "pending", "occurred_at": "2026-01-01T00:00:00+00:00", "received_at": "2026-01-01T00:00:00+00:00"},
+    {"event_id": "uat_late_pending_event_success", "attempt_id": "uat_late_pending_attempt", "status": "success", "occurred_at": "2026-01-03T00:00:00+00:00", "received_at": "2026-01-03T00:00:00+00:00"},
+    {"event_id": "uat_replayed_event_event", "attempt_id": "uat_replayed_event_attempt", "status": "success", "occurred_at": "2026-01-01T00:00:00+00:00", "received_at": "2026-01-01T00:00:00+00:00"},
+    {"event_id": "uat_double_success_event_a", "attempt_id": "uat_double_success_attempt_a", "status": "success", "occurred_at": "2026-01-02T00:01:00+00:00", "received_at": "2026-01-02T00:01:00+00:00"},
+    {"event_id": "uat_double_success_event_b", "attempt_id": "uat_double_success_attempt_b", "status": "success", "occurred_at": "2026-01-02T00:11:00+00:00", "received_at": "2026-01-02T00:11:00+00:00"},
+    {"event_id": "uat_partial_refunds_event", "attempt_id": "uat_partial_refunds_attempt", "status": "success", "occurred_at": "2026-01-03T00:00:00+00:00", "received_at": "2026-01-03T00:00:00+00:00"},
+    {"event_id": "uat_fee_tax_net_event", "attempt_id": "uat_fee_tax_net_attempt", "status": "success", "occurred_at": "2026-01-04T00:00:00+00:00", "received_at": "2026-01-04T00:00:00+00:00"},
+    {"event_id": "uat_not_yet_due_event", "attempt_id": "uat_not_yet_due_attempt", "status": "success", "occurred_at": "2026-01-01T02:00:00+00:00", "received_at": "2026-01-01T02:00:00+00:00"},
+    {"event_id": "uat_overdue_missing_event", "attempt_id": "uat_overdue_missing_attempt", "status": "success", "occurred_at": "2026-01-01T03:00:00+00:00", "received_at": "2026-01-01T03:00:00+00:00"},
+    {"event_id": "uat_partial_settlement_event", "attempt_id": "uat_partial_settlement_attempt", "status": "success", "occurred_at": "2026-01-04T00:00:00+00:00", "received_at": "2026-01-04T00:00:00+00:00"},
+    {"event_id": "uat_refund_over_capture_event", "attempt_id": "uat_refund_over_capture_attempt", "status": "success", "occurred_at": "2026-01-03T00:00:00+00:00", "received_at": "2026-01-03T00:00:00+00:00"}
+  ],
+  "batches": [
+    {"batch_id": "uat_fee_tax_net_batch", "due_at": "2026-01-07T00:00:00+00:00", "settled_at": "2026-01-08T00:00:00+00:00", "actual_net_paise": 87000, "currency": "INR"},
+    {"batch_id": "uat_not_yet_due_batch", "due_at": "2026-04-02T00:00:00+00:00", "settled_at": null, "actual_net_paise": null, "currency": "INR"},
+    {"batch_id": "uat_overdue_missing_batch", "due_at": "2026-01-05T00:00:00+00:00", "settled_at": null, "actual_net_paise": null, "currency": "INR"},
+    {"batch_id": "uat_partial_settlement_batch", "due_at": "2026-01-07T00:00:00+00:00", "settled_at": "2026-01-08T00:00:00+00:00", "actual_net_paise": 98000, "currency": "INR"}
+  ],
+  "refunds": [
+    {"refund_id": "uat_partial_refunds_refund_300", "attempt_id": "uat_partial_refunds_attempt", "amount_paise": 30000, "status": "success", "processed_at": "2026-01-04T00:00:00+00:00", "settlement_batch_id": null},
+    {"refund_id": "uat_partial_refunds_refund_200", "attempt_id": "uat_partial_refunds_attempt", "amount_paise": 20000, "status": "success", "processed_at": "2026-01-04T01:00:00+00:00", "settlement_batch_id": null},
+    {"refund_id": "uat_partial_refunds_refund_pending", "attempt_id": "uat_partial_refunds_attempt", "amount_paise": 10000, "status": "pending", "processed_at": null, "settlement_batch_id": null},
+    {"refund_id": "uat_fee_tax_net_refund", "attempt_id": "uat_fee_tax_net_attempt", "amount_paise": 10000, "status": "success", "processed_at": "2026-01-06T00:00:00+00:00", "settlement_batch_id": "uat_fee_tax_net_batch"},
+    {"refund_id": "uat_partial_settlement_refund", "attempt_id": "uat_partial_settlement_attempt", "amount_paise": 5000, "status": "success", "processed_at": "2026-01-06T00:00:00+00:00", "settlement_batch_id": "uat_partial_settlement_batch"},
+    {"refund_id": "uat_refund_over_capture_refund_600", "attempt_id": "uat_refund_over_capture_attempt", "amount_paise": 60000, "status": "success", "processed_at": "2026-01-04T00:00:00+00:00", "settlement_batch_id": null},
+    {"refund_id": "uat_refund_over_capture_refund_500", "attempt_id": "uat_refund_over_capture_attempt", "amount_paise": 50000, "status": "success", "processed_at": "2026-01-04T01:00:00+00:00", "settlement_batch_id": null}
+  ],
+  "lines": [
+    {"line_id": "uat_fee_tax_net_line_capture", "batch_id": "uat_fee_tax_net_batch", "attempt_id": "uat_fee_tax_net_attempt", "refund_id": null, "line_type": "capture", "signed_amount_paise": 100000},
+    {"line_id": "uat_fee_tax_net_line_refund", "batch_id": "uat_fee_tax_net_batch", "attempt_id": null, "refund_id": "uat_fee_tax_net_refund", "line_type": "refund", "signed_amount_paise": -10000},
+    {"line_id": "uat_fee_tax_net_line_fee", "batch_id": "uat_fee_tax_net_batch", "attempt_id": null, "refund_id": null, "line_type": "fee", "signed_amount_paise": -2000},
+    {"line_id": "uat_fee_tax_net_line_tax", "batch_id": "uat_fee_tax_net_batch", "attempt_id": null, "refund_id": null, "line_type": "fee_tax", "signed_amount_paise": -360},
+    {"line_id": "uat_not_yet_due_line_capture", "batch_id": "uat_not_yet_due_batch", "attempt_id": "uat_not_yet_due_attempt", "refund_id": null, "line_type": "capture", "signed_amount_paise": 100000},
+    {"line_id": "uat_overdue_missing_line_capture", "batch_id": "uat_overdue_missing_batch", "attempt_id": "uat_overdue_missing_attempt", "refund_id": null, "line_type": "capture", "signed_amount_paise": 100000},
+    {"line_id": "uat_partial_settlement_line_capture", "batch_id": "uat_partial_settlement_batch", "attempt_id": "uat_partial_settlement_attempt", "refund_id": null, "line_type": "capture", "signed_amount_paise": 100000},
+    {"line_id": "uat_partial_settlement_line_fee", "batch_id": "uat_partial_settlement_batch", "attempt_id": null, "refund_id": null, "line_type": "fee", "signed_amount_paise": -2000}
+  ]
+}
