@@ -1,6 +1,6 @@
 # Data dictionary
 
-Source: `Harsh_Sagar_Payments_Project_PRD.pdf` §6 (columns) and §7 (metrics).  
+Source: `Harsh_Sagar_Payments_Project_PRD.pdf` ï¿½6 (columns) and ï¿½7 (metrics).  
 Rules that are choices, not PRD fields, live in `docs/assumptions.md`.
 
 Synthetic INR only. Every amount is an integer number of paise. Every timestamp is `timestamptz` (UTC). Business dates use `Asia/Kolkata`.
@@ -119,7 +119,7 @@ Grain: one batch line.
 | `line_type` | `text` | no | `capture`, `refund`, `fee`, or `fee_tax`. |
 | `signed_amount_paise` | `bigint` | no | Signed paise. See line types. Zero is not a valid line. |
 
-## Metrics (§7)
+## Metrics (ï¿½7)
 
 Amounts below are paise. Rates are ratios, reported with the numerator and the denominator as well as the rate.
 
@@ -163,7 +163,7 @@ A batch is overdue when `as_of > due_at` and `actual_net_paise` is null.
 
 A batch with `due_at` still in the future and a null actual is awaiting settlement. It is not overdue.
 
-## Exceptions (§8)
+## Exceptions (ï¿½8)
 
 These are the queues the later SQL must return. Definitions use only the columns above.
 
@@ -181,6 +181,6 @@ A batch can carry a partial flag and a mismatch flag at the same time. Each flag
 
 ## Coverage check
 
-§6 columns: `order_id`, `created_at`, `order_amount_paise`, `currency`, `attempt_id`, `order_id`, `method`, `amount_paise`, `status`, `created_at`, `status_updated_at`, `event_id`, `attempt_id`, `status`, `occurred_at`, `received_at`, `refund_id`, `attempt_id`, `amount_paise`, `status`, `processed_at`, `settlement_batch_id`, `line_id`, `batch_id`, `attempt_id`, `refund_id`, `line_type`, `signed_amount_paise`, `batch_id`, `due_at`, `settled_at`, `actual_net_paise`, `currency`.
+ï¿½6 columns: `order_id`, `created_at`, `order_amount_paise`, `currency`, `attempt_id`, `order_id`, `method`, `amount_paise`, `status`, `created_at`, `status_updated_at`, `event_id`, `attempt_id`, `status`, `occurred_at`, `received_at`, `refund_id`, `attempt_id`, `amount_paise`, `status`, `processed_at`, `settlement_batch_id`, `line_id`, `batch_id`, `attempt_id`, `refund_id`, `line_type`, `signed_amount_paise`, `batch_id`, `due_at`, `settled_at`, `actual_net_paise`, `currency`.
 
-§7 metrics: attempt success rate, order paid rate, refund value, expected net, variance, overdue batches.
+ï¿½7 metrics: attempt success rate, order paid rate, refund value, expected net, variance, overdue batches.
